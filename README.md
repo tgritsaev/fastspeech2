@@ -77,5 +77,4 @@ https://api.wandb.ai/links/tgritsaev/rkir8sp9 (Russian only)
 
 This repository is based on a heavily modified fork
 of [pytorch-template](https://github.com/victoresque/pytorch-template) repository. 
-
-FastSpeech2 impementation is based on code HSE "Deep Learning in Audio" course [seminar](https://github.com/XuMuK1/dla2023/blob/2023/week07/seminar07.ipynb) and official [FastSpeech2 repository](https://github.com/ming024/FastSpeech2).
+FastSpeech2 impementation is based on the code from HSE "Deep Learning in Audio" course [seminar](https://github.com/XuMuK1/dla2023/blob/2023/week07/seminar07.ipynb) and official [FastSpeech2 repository](https://github.com/ming024/FastSpeech2).
