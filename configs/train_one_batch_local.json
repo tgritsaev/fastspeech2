@@ -34,7 +34,7 @@
     },
     "data": {
         "train": {
-            "batch_size": 4,
+            "batch_size": 10,
             "num_workers": 1,
             "datasets": [
                 {
@@ -42,18 +42,19 @@
                     "args": {
                         "dir": "data",
                         "text_cleaners": ["english_cleaners"],
-                        "batch_expand_size": 1,
-                        "limit": 4
+                        "batch_expand_size": 4,
+                        "limit": 40
                     }
                 }
             ]
         }
     },
     "optimizer": {
-        "type": "AdamW",
+        "type": "Adam",
         "args": {
             "lr": 1e-3,
-            "weight_decay": 1e-5
+            "betas": [0.9, 0.98],
+            "eps": 1e-9
         }
     },
     "loss": {
@@ -63,16 +64,18 @@
     "lr_scheduler": {
         "type": "OneCycleLR",
         "args": {
-            "steps_per_epoch": 10,
-            "epochs": 4,
+            "epochs": 16,
+            "steps_per_epoch": 100,
             "anneal_strategy": "cos",
             "max_lr": 1e-3,
-            "pct_start": 0.2
+            "pct_start": 0.1
         }
     },
     "trainer": {
-        "epochs": 4,
-        "batch_expand_size": 1,
+        "epochs": 16,
+        "len_epoch": 100,
+        "log_step": 10,
+        "batch_expand_size": 4,
         "save_dir": "saved/",
         "save_period": 1,
         "verbosity": 2,
@@ -80,8 +83,7 @@
         "early_stop": 100,
         "visualize": "wandb",
         "wandb_project": "one_batch_dla3_text_to_speech",
-        "len_epoch": 10,
-        "grad_norm_clip": 5,
+        "grad_norm_clip": 25,
         "waveglow_path": "waveglow/pretrained_model/waveglow_256channels.pt"
     }
 }
