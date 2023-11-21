@@ -1,27 +1,34 @@
-# Text to speech with FastSpeech2 https://arxiv.org/pdf/2006.04558.pdf
+# Text to speech with FastSpeech2 
+
+Based on https://arxiv.org/pdf/2006.04558.pdf
 
 ## Installation guide
 
-1. Install libraries
+1. Use python3.9
+```shell
+conda create -n fastspeech python=3.9 && conda activate fastspeech
+```
+2. Install libraries
 ```shell
 pip install -r requirements.txt
 ```
-2. Download Librispeech and create Mixture dataset
+3. Download data
 ```shell
-python create_dataset.py -c create_dataset.json
+bash scripts/download_data.sh
 ```
-3. If you want to test my solution quality, download my speech separation checkpoint `ss-checkpoint.pth` from the https://drive.google.com/drive/folders/14dn7NIHOfOoIUm_hCkZ7RUHhniErGvzp?usp=sharing. Optional, if you want to measure WER and CER, download my audio speech recognition checkpoint, named `asr-checkpoint.pth`, from the same link.
+4. Preprocess data: save pitch and energy
+```shell
+bash scripts/preprocess_data.py
+```
+5. If you want to test my solution quality, download my speech separation checkpoint `ss-checkpoint.pth` from the https://drive.google.com/drive/folders/14dn7NIHOfOoIUm_hCkZ7RUHhniErGvzp?usp=sharing. Optional, if you want to measure WER and CER, download my audio speech recognition checkpoint, named `asr-checkpoint.pth`, from the same link.
 
 ## Train 
 
-1. General training pipeline
+1. Train
 ```shell
-python train.py -c src/configs/config.json
+python train.py -c configs/train.json
 ```
-2. Reproduce my final train setup
-```shell
-python train.py -c path_to_config
-```
+Final model was trained with `train.json` config.
 
 ## Test
 
