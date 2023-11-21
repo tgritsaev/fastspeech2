@@ -1,6 +1,6 @@
 # Text to speech with FastSpeech2 
 
-1. [FastSpeech2 article](https://arxiv.org/pdf/2006.04558.pdf) and [FastSpeech article](https://arxiv.org/pdf/1905.09263.pdf).
+[FastSpeech2 article](https://arxiv.org/pdf/2006.04558.pdf) and [FastSpeech article](https://arxiv.org/pdf/1905.09263.pdf).
 
 ## Installation guide
 
