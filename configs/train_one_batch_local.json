@@ -82,6 +82,6 @@
         "wandb_project": "one_batch_dla3_text_to_speech",
         "len_epoch": 10,
         "grad_norm_clip": 25,
-        "waveglow_path": "/kaggle/input/fastspeecch-dataset/waveglow_256channels.pt"
+        "waveglow_path": "waveglow/pretrained_model/waveglow_256channels.pt"
     }
 }

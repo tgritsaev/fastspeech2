@@ -123,8 +123,6 @@ dla.code-workspace
 .idea/
 __MACOSX/
 
-# local logs
+# supercomputer logs and scripts
 runs/
-
-# 
 *.sbatch

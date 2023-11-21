@@ -123,7 +123,7 @@ if __name__ == "__main__":
         "--device",
         default=None,
         type=str,
-        help="select 'cuda' or 'cpu'.",
+        help="Device, select 'cuda' or 'cpu'.",
     )
     args = args.parse_args()
 
