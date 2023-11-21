@@ -47,7 +47,7 @@ Test include such arguments:
 * Checkpoint path: `-cp, --checkpoint, default="test_model/checkpoint.pth"`
 * Input texts path: `-i, --input, test_model/input.txt`
 * Waveglow weights path: `-w, --waveglow, default="waveglow/pretrained_model/waveglow_256channels.pt"`
-* Device, select 'cuda' or 'cpu': `-d, --device`, if it is not specified, cuda will be selected if exists otherwise cpu will be selected.
+* Device, select 'cuda' or 'cpu': `-d, --device`, if it is not specified, cuda will be selected if exists, otherwise cpu will be selected.
 
 ## Wandb Report
 
