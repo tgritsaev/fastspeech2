@@ -81,7 +81,7 @@
         "visualize": "wandb",
         "wandb_project": "one_batch_dla3_text_to_speech",
         "len_epoch": 10,
-        "grad_norm_clip": 25,
+        "grad_norm_clip": 5,
         "waveglow_path": "waveglow/pretrained_model/waveglow_256channels.pt"
     }
 }

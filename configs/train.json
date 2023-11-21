@@ -82,7 +82,7 @@
         "early_stop": 100,
         "visualize": "wandb",
         "wandb_project": "dla3_text_to_speech",
-        "grad_norm_clip": 5,
+        "grad_norm_clip": 1,
         "waveglow_path": "waveglow/pretrained_model/waveglow_256channels.pt"
     }
 }
