@@ -6,11 +6,11 @@ Based on https://arxiv.org/pdf/2006.04558.pdf
 
 1. Use python3.9
 ```shell
-conda create -n fastspeech python=3.9 && conda activate fastspeech
+conda create -n fastspeech2 python=3.9 && conda activate fastspeech2
 ```
 2. Install libraries
 ```shell
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 3. Download data
 ```shell
@@ -18,7 +18,7 @@ bash scripts/download_data.sh
 ```
 4. Preprocess data: save pitch and energy
 ```shell
-bash scripts/preprocess_data.py
+python3 scripts/preprocess_data.py
 ```
 5. If you want to test my solution quality, download my speech separation checkpoint `ss-checkpoint.pth` from the https://drive.google.com/drive/folders/14dn7NIHOfOoIUm_hCkZ7RUHhniErGvzp?usp=sharing. Optional, if you want to measure WER and CER, download my audio speech recognition checkpoint, named `asr-checkpoint.pth`, from the same link.
 
@@ -26,7 +26,7 @@ bash scripts/preprocess_data.py
 
 1. Train
 ```shell
-python train.py -c configs/train.json
+python3 train.py -c configs/train.json
 ```
 Final model was trained with `train.json` config.
 
@@ -76,25 +76,6 @@ https://api.wandb.ai/links/tgritsaev/rkir8sp9 (Russian only)
 ## Credits
 
 This repository is based on a heavily modified fork
-of [pytorch-template](https://github.com/victoresque/pytorch-template) repository.
+of [pytorch-template](https://github.com/victoresque/pytorch-template) repository. 
 
-## Docker
-
-You can use this project with docker. Quick start:
-
-```bash 
-docker build -t my_src_image . 
-docker run \
-   --gpus '"device=0"' \
-   -it --rm \
-   -v /path/to/local/storage/dir:/repos/asr_project_template/data/datasets \
-   -e WANDB_API_KEY=<your_wandb_api_key> \
-	my_src_image python -m unittest 
-```
-
-Notes:
-
-* `-v /out/of/container/path:/inside/container/path` -- bind mount a path, so you wouldn't have to download datasets at
-  the start of every docker run.
-* `-e WANDB_API_KEY=<your_wandb_api_key>` -- set envvar for wandb (if you want to use it). You can find your API key
-  here: https://wandb.ai/authorize
+FastSpeech2 impementation is based on code HSE "Deep Learning in Audio" course [seminar](https://github.com/XuMuK1/dla2023/blob/2023/week07/seminar07.ipynb) and official [FastSpeech2 repository](https://github.com/ming024/FastSpeech2).
