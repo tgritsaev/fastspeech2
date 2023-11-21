@@ -140,10 +140,10 @@ class VarianceAdaptor(nn.Module):
             bins = self.pitch_bins
 
         if target is not None:
-            buckets = torch.bucketize(torch.log(target + 1), bins)
+            buckets = torch.bucketize(torch.log1p(target), bins)
         else:
             estimated = (torch.exp(prediction) - 1) * control
-            buckets = torch.bucketize(torch.log(estimated + 1), bins)
+            buckets = torch.bucketize(torch.log1p(estimated), bins)
 
         if param == "energy":
             embedding = self.energy_embedding(buckets)
