@@ -2,7 +2,7 @@
 
 [FastSpeech2 article](https://arxiv.org/pdf/2006.04558.pdf) and [FastSpeech article](https://arxiv.org/pdf/1905.09263.pdf).
 
-## Example
+## Model output example
 https://github.com/tgritsaev/fastspeech2/assets/34184267/0598f598-337f-4947-a76c-a084c4e36453
 
 ## Installation guide
