@@ -1,1 +1,1 @@
-Be not afraid of greatness. Some are born great, some achieve greatness, and others have greatness thrust upon them.
+Wasserstein distance or Kantorovich Rubinstein metric is a distance function defined between probability distributions on a given metric space
