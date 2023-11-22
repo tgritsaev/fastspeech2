@@ -57,8 +57,8 @@ def main(config, args):
         )["mel_prediction"]
         wav = get_wav(mel_prediction.transpose(1, 2), waveglow, sampling_rate=DEFAULT_SR).unsqueeze(0)
 
-        prefix_name = f"{i+1:04d}_l{round(args.length_control, 2)}"
-        suffix_name = f"p{round(args.pitch_control, 2)}_e{round(args.energy_control, 2)}"
+        prefix_name = f"{i+1:04d}"
+        suffix_name = f"l{round(args.length_control, 2)}-p{round(args.pitch_control, 2)}-e{round(args.energy_control, 2)}"
         with open(f"{results_dir}/{prefix_name}-text-{suffix_name}.txt", "w") as fout:
             fout.write(text)
         torchaudio.save(f"{results_dir}/{prefix_name}-audio-{suffix_name}.wav", wav, sample_rate=DEFAULT_SR)
