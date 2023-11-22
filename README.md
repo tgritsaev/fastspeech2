@@ -2,6 +2,9 @@
 
 [FastSpeech2 article](https://arxiv.org/pdf/2006.04558.pdf) and [FastSpeech article](https://arxiv.org/pdf/1905.09263.pdf).
 
+## Example
+https://github.com/tgritsaev/fastspeech2/assets/34184267/8b2c0bd3-2983-410f-b0ef-0e3f6b077202
+
 ## Installation guide
 
 1. Use python3.9
