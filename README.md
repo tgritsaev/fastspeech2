@@ -3,7 +3,7 @@
 [FastSpeech2 article](https://arxiv.org/pdf/2006.04558.pdf) and [FastSpeech article](https://arxiv.org/pdf/1905.09263.pdf).
 
 ## Example
-https://github.com/tgritsaev/fastspeech2/assets/34184267/8b2c0bd3-2983-410f-b0ef-0e3f6b077202
+https://github.com/tgritsaev/fastspeech2/assets/34184267/0598f598-337f-4947-a76c-a084c4e36453
 
 ## Installation guide
 
