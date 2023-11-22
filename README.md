@@ -22,7 +22,7 @@ python3 scripts/preprocess_data.py
 ```
 5. Download my final FastSpeech2 checkpoint
 ```shell
-python3 scripts/download_checkpoint
+python3 scripts/download_checkpoint.py
 ```
 
 ## Train 
@@ -39,19 +39,18 @@ Final model was trained with `train.json` config.
 ```shell
 python3 test.py
 ```
-Test include such arguments:
+`test.py` include such arguments:
 * Config path: `-c, --config, default="configs/test.json"`
 * Increase or decrease audio speed: `-l, --length-control, default=1`
 * Increase or decrease audio pitch: `-p, --pitch-control, default=1`
 * Increase or decrease audio energy: `-e, --energy-control, default=1`
-* Checkpoint path: `-cp, --checkpoint, default="test_model/checkpoint.pth"`
+* Checkpoint path: `-cp, --checkpoint, default="test_model/tts-checkpoint.pth"`
 * Input texts path: `-i, --input, test_model/input.txt`
 * Waveglow weights path: `-w, --waveglow, default="waveglow/pretrained_model/waveglow_256channels.pt"`
-* Device, select 'cuda' or 'cpu': `-d, --device`, if it is not specified, cuda will be selected if exists, otherwise cpu will be selected.
 
 ## Wandb Report
 
-https://api.wandb.ai/links/tgritsaev/rkir8sp9 (Russian only)
+https://api.wandb.ai/links/tgritsaev/rkir8sp9 (English only)
 
 ## Credits
 

@@ -17,11 +17,10 @@ from waveglow import get_wav, get_waveglow
 def main(config, args):
     logger = config.get_logger("test")
 
-    if args.device is None:
-        # define cpu or gpu if possible
-        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    else:
-        device = torch.device(args.device)
+    # define cpu or gpu if possible
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    if device.type == "cpu":
+        logger.error("Error, supported cuda only!")
 
     # build model architecture
     model = config.init_obj(config["arch"], module_model)
@@ -100,7 +99,7 @@ if __name__ == "__main__":
     args.add_argument(
         "-cp",
         "--checkpoint",
-        default="test_model/checkpoint.pth",
+        default="test_model/tts-checkpoint.pth",
         type=str,
         help="Checkpoint path.",
     )
@@ -117,13 +116,6 @@ if __name__ == "__main__":
         default="waveglow/pretrained_model/waveglow_256channels.pt",
         type=str,
         help="Waveglow weights path.",
-    )
-    args.add_argument(
-        "-d",
-        "--device",
-        default=None,
-        type=str,
-        help="Device, select 'cuda' or 'cpu'.",
     )
     args = args.parse_args()
 
