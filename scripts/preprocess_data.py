@@ -35,18 +35,18 @@ def save_pitch():
         audio = audio.to(torch.float64).numpy().sum(axis=0)
 
         frame_period = (audio.shape[0] / sr * 1000) / mel.shape[0]
-        _f0, t = pw.dio(audio, sr, frame_period=frame_period)
-        f0 = pw.stonemask(audio, _f0, t, sr)[: mel.shape[0]]
-        nonzeros = np.nonzero(f0)
-        x = np.arange(f0.shape[0])[nonzeros]
-        values = (f0[nonzeros][0], f0[nonzeros][-1])
-        f = interpolate.interp1d(x, f0[nonzeros], bounds_error=False, fill_value=values)
-        new_f0 = f(np.arange(f0.shape[0]))
+        pitch, t = pw.dio(audio, sr, frame_period=frame_period)
+        pitch = pw.stonemask(audio, pitch, t, sr)[: mel.shape[0]]
+        nonzeros = np.nonzero(pitch)
+        x = np.arange(pitch.shape[0])[nonzeros]
+        values = (pitch[nonzeros][0], pitch[nonzeros][-1])
+        f = interpolate.interp1d(x, pitch[nonzeros], bounds_error=False, fill_value=values)
+        pitch = f(np.arange(pitch.shape[0]))
 
-        np.save(PITCH_PATH / ("ljspeech-pitch-%05d.npy" % (i + 1)), new_f0)
+        np.save(PITCH_PATH / ("ljspeech-pitch-%05d.npy" % (i + 1)), pitch)
 
-        min_pitch = min(min_pitch, new_f0.min())
-        max_pitch = max(max_pitch, new_f0.max())
+        min_pitch = min(min_pitch, pitch.min())
+        max_pitch = max(max_pitch, pitch.max())
 
     logger.info(f"min_pitch: {min_pitch}\nmax_pitch: {max_pitch}")
 
