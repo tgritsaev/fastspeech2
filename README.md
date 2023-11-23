@@ -31,16 +31,14 @@ python3 scripts/download_checkpoint.py
 ```
 
 ## Train 
-
-1. Train
+1. Run for training 
 ```shell
 python3 train.py -c configs/train.json
 ```
 Final model was trained with `train.json` config.
 
 ## Test
-
-1. Test
+1. Run for testing
 ```shell
 python3 test.py
 ```
