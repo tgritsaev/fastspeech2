@@ -120,6 +120,8 @@ class VarianceAdaptor(nn.Module):
         super().__init__()
         self.length_regulator = LengthRegulator(encoder_dim, duration_predictor_filter_size, duration_predictor_kernel_size, dropout)
 
+        self.num_bins = num_bins
+
         self.pitch_predictor = Predictor(encoder_dim, pitch_predictor_filter_size, pitch_predictor_kernel_size, dropout)
         pitch_bins = torch.linspace(np.log(min_pitch + 1), np.log(max_pitch + 2), num_bins)
         self.register_buffer("pitch_bins", pitch_bins)
@@ -145,6 +147,7 @@ class VarianceAdaptor(nn.Module):
             estimated = (torch.exp(prediction) - 1) * control
             buckets = torch.bucketize(torch.log1p(estimated), bins)
 
+        buckets = torch.clamp(buckets, max=self.num_bins)
         if param == "energy":
             embedding = self.energy_embedding(buckets)
         else:
