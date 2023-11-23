@@ -3,7 +3,7 @@
 [FastSpeech2 article](https://arxiv.org/pdf/2006.04558.pdf) and [FastSpeech article](https://arxiv.org/pdf/1905.09263.pdf).
 
 ## Model output example
-https://github.com/tgritsaev/fastspeech2/assets/34184267/0598f598-337f-4947-a76c-a084c4e36453
+https://github.com/tgritsaev/fastspeech2/assets/34184267/80b357d5-6a8f-492d-a550-d8c83645e2f2
 
 ## Installation guide
 
@@ -51,9 +51,11 @@ python3 test.py
 * Input texts path: `-i, --input, test_model/input.txt`
 * Waveglow weights path: `-w, --waveglow, default="waveglow/pretrained_model/waveglow_256channels.pt"`
 
+Results will be saved in the `test_model/results`, you can see example in this folder.
+
 ## Wandb Report
 
-https://api.wandb.ai/links/tgritsaev/rkir8sp9 (English only)
+[https://api.wandb.ai/links/tgritsaev/rkir8sp9](https://wandb.ai/tgritsaev/dla3_text_to_speech/reports/Text-to-speech-with-FastSpeech2--Vmlldzo2MDU2MjU5?accessToken=4bu09pvt6ik0wpse85z5cnckki7q0pcdfo8aug40gw942v1h1jcf1gtp2vfo8w58) (English only)
 
 ## Credits
 
