@@ -4,6 +4,7 @@
 
 ## Model output example
 Should be audio only, but Github supports only video+audio formats.
+
 https://github.com/tgritsaev/fastspeech2/assets/34184267/80b357d5-6a8f-492d-a550-d8c83645e2f2
 
 ## Installation guide
