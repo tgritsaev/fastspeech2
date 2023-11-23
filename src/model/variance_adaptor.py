@@ -147,7 +147,7 @@ class VarianceAdaptor(nn.Module):
             estimated = (torch.exp(prediction) - 1) * control
             buckets = torch.bucketize(torch.log1p(estimated), bins)
 
-        buckets = torch.clamp(buckets, max=self.num_bins)
+        buckets = torch.clamp(buckets, max=self.num_bins - 1)
         if param == "energy":
             embedding = self.energy_embedding(buckets)
         else:
