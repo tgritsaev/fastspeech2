@@ -3,9 +3,11 @@
 [FastSpeech2 article](https://arxiv.org/pdf/2006.04558.pdf) and [FastSpeech article](https://arxiv.org/pdf/1905.09263.pdf).
 
 ## Model output example
-The model inference result is just audio, but Github supports only video+audio formats.
+The model inference result is audio, but Github supports only video+audio formats.
 
 https://github.com/tgritsaev/fastspeech2/assets/34184267/80b357d5-6a8f-492d-a550-d8c83645e2f2
+
+You can also download my [tts-results](https://drive.google.com/drive/folders/1U0REGoBFfei30iCxaMrHEaIx0zVPMSIO?usp=share_link) from Google Drive, it includes 27 audios with different length, pitch and energy for the first three inputs from `test_model/input.txt`.
 
 ## Installation guide
 
