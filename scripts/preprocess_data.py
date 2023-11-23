@@ -37,10 +37,10 @@ def save_pitch():
         frame_period = (audio.shape[0] / sr * 1000) / mel.shape[0]
         pitch, t = pw.dio(audio, sr, frame_period=frame_period)
         pitch = pw.stonemask(audio, pitch, t, sr)[: mel.shape[0]]
-        nonzeros = np.nonzero(pitch)
-        x = np.arange(pitch.shape[0])[nonzeros]
-        values = (pitch[nonzeros][0], pitch[nonzeros][-1])
-        f = interpolate.interp1d(x, pitch[nonzeros], bounds_error=False, fill_value=values)
+        nonzeros_ids = np.nonzero(pitch)
+        x = np.arange(pitch.shape[0])[nonzeros_ids]
+        values = (pitch[nonzeros_ids][0], pitch[nonzeros_ids][-1])
+        f = interpolate.interp1d(x, pitch[nonzeros_ids], bounds_error=False, fill_value=values)
         pitch = f(np.arange(pitch.shape[0]))
 
         np.save(PITCH_PATH / ("ljspeech-pitch-%05d.npy" % (i + 1)), pitch)
