@@ -3,7 +3,7 @@
 [FastSpeech2 article](https://arxiv.org/pdf/2006.04558.pdf) and [FastSpeech article](https://arxiv.org/pdf/1905.09263.pdf).
 
 ## Model output example
-Should be audio only, but Github supports only video+audio formats.
+The model inference result is just audio, but Github supports only video+audio formats.
 
 https://github.com/tgritsaev/fastspeech2/assets/34184267/80b357d5-6a8f-492d-a550-d8c83645e2f2
 
