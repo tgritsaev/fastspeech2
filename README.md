@@ -44,6 +44,7 @@ python3 test.py
 ```
 `test.py` include such arguments:
 * Config path: `-c, --config, default="configs/test.json"`
+* Create multiple audio variants with different length, pitch and energy `-t, --test, default=False`
 * Increase or decrease audio speed: `-l, --length-control, default=1`
 * Increase or decrease audio pitch: `-p, --pitch-control, default=1`
 * Increase or decrease audio energy: `-e, --energy-control, default=1`
